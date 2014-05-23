@@ -28,6 +28,10 @@
     "mocha": "^1.18.2",
     "grunt-mocha-cli": "^1.8.0",
     "sinon": "^1.9.1",
-    "node-inspector": "^0.7.3"
+    "node-inspector": "^0.7.3",
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "load-grunt-tasks": "~0.4.0",
+    "grunt-cli": "~0.1.13"
   }
 }
