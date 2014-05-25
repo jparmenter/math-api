@@ -31,5 +31,6 @@
     "it": false,
     "jasmine": false,
     "spyOn": false
-  }
+  },
+  "predef": ["sinon"]
 }

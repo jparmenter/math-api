@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-      src: ['test/{,*/}*.js']
+      src: ['test/**/*.js']
       }
     },
     mochaTest: {
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         options: {
           reporter: 'spec'
         },
-        src: ['test/{,**/}*.js']
+        src: ['test/**/*.js']
       }
     },
     watch: {

@@ -1,3 +1,5 @@
+'use strict';
+
 describe('PrimeController Tests', function() {
   var mockPrimeService;
   var PrimeController;
@@ -24,7 +26,7 @@ describe('PrimeController Tests', function() {
     });
 
     it('calls server get() with route', function() {
-      var server = { get: function(route, callback) {} };
+      var server = { get: function() {} };
       sinon.stub(server, 'get');
 
       PrimeController.registerRoutes(server);
