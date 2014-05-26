@@ -13,7 +13,7 @@ describe('PrimeService Tests', function() {
       expect(primeService.getIsPrime).to.be.a('function');
     });
 
-    it('valid number', function(done) {
+    it('valid prime number', function(done) {
       var error = function() {
         throw 'error callback should NOT be called';
       };
@@ -26,6 +26,21 @@ describe('PrimeService Tests', function() {
       };
 
       primeService.getIsPrime('2', success, error);
+    });
+
+    it('valid not prime number', function(done) {
+      var error = function() {
+        throw 'error callback should NOT be called';
+      };
+
+      var success = function(numberData) {
+        expect(numberData).to.not.equal(null);
+        expect(numberData.number).to.equal('6');
+        expect(numberData.isPrime).to.equal(false);
+        done();
+      };
+
+      primeService.getIsPrime('6', success, error);
     });
 
     it('undefined number', function(done) {
