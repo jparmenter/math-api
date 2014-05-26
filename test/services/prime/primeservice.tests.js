@@ -58,6 +58,37 @@ describe('PrimeService Tests', function() {
       primeService.getIsPrime(null, success, error);
     });
 
+
+    it('empty number', function(done) {
+      var error = function(numberData) {
+        expect(numberData).to.not.equal(null);
+        expect(numberData.number).to.equal('0');
+        expect(numberData.isPrime).to.equal(false);
+        done();
+      };
+
+      var success = function() {
+        throw 'success callback should NOT be called';
+      };
+
+      primeService.getIsPrime('', success, error);
+    });
+
+    it('string "abc" as number', function(done) {
+      var error = function(numberData) {
+        expect(numberData).to.not.equal(null);
+        expect(numberData.number).to.equal('0');
+        expect(numberData.isPrime).to.equal(false);
+        done();
+      };
+
+      var success = function() {
+        throw 'success callback should NOT be called';
+      };
+
+      primeService.getIsPrime('abc', success, error);
+    });
+
     it('undefined success callback', function() {
       var error = function() {};
       expect(function() { primeService.getIsPrime('2', undefined, error); }).to.throw('Argument exception, "success" callback is required');
